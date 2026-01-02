@@ -1,11 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-</head>
-<body>
-   
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/paginations/src/styleout.css" />
+  </head>
+  <body class="flex justify-center items-center">
+    <div class="bg-slate-50 container">
+      <!-- head -->
+      <div class="bg-red-300 py-4 flex px-3 justify-between gap-1.5">
+        <div>
+          <div class="text-5xl">students</div>
+          <div class="flex gap-2">
+            <span>{icon}</span> total: <span>{total}</span>
+          </div>
+        </div>
+
+        <div class="bg-amber-500 flex justify-center items-center gap-3">
+          <button class="bg-amber-400 px-4 py-2">add student</button>
+          <button class="bg-amber-400 px-4 py-2">export data</button>
+        </div>
+      </div>
+      <!-- action trigger -->
+      <div class="bg-amber-500 flex gap-15">
+        <!-- sellective action -->
+        <div class="flex justify-center items-center gap-2">
+          <select name="" id="" placeholder="classes">
+            <option value="classes">classes</option>
+            <option value="classes">1</option>
+            <option value="classes">2</option>
+            <option value="classes">3</option>
+            <option value="classes">4</option>
+          </select>
+          <select name="" id="" placeholder="classes">
+            <option value="classes">ages</option>
+            <option value="classes">1</option>
+            <option value="classes">2</option>
+            <option value="classes">3</option>
+            <option value="classes">4</option>
+          </select>
+          <select name="" id="" placeholder="classes">
+            <option value="classes">rata2 nilai</option>
+            <option value="classes">1</option>
+            <option value="classes">2</option>
+            <option value="classes">3</option>
+            <option value="classes">4</option>
+          </select>
+          <select name="" id="" placeholder="classes">
+            <option value="classes">filters</option>
+            <option value="classes">1</option>
+            <option value="classes">2</option>
+            <option value="classes">3</option>
+            <option value="classes">4</option>
+          </select>
+        </div>
+        <div class="flex justify-center items-center gap-3">
+          <!-- action nest -->
+          <button class="bg-blue-100 px-4 py-2">e</button>
+          <button class="bg-blue-100 px-4 py-2">k</button>
+          <button class="bg-blue-100 px-4 py-2">r</button>
+          <button class="bg-blue-100 px-4 py-2">h-</button>
+        </div>
+      </div>
+      <!-- tabel siswa -->
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
+        <table class="w-full text-sm text-left text-gray-500">
+          <thead
+            class="text-xs text-gray-700 uppercase bg-slate-100 border-b border-b-slate-300"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-3">NISN</th>
+              <th scope="col" class="px-6 py-3">students</th>
+              <th scope="col" class="px-6 py-3">jenis kelamin</th>
+              <th scope="col" class="px-6 py-3">age</th>
+              <th scope="col" class="px-6 py-3">class</th>
+              <th scope="col" class="px-6 py-3">nilai rata2</th>
+              <th scope="col" class="px-6 py-3">S/I/A</th>
+              <th scope="col" class="px-6 py-3">actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white border-b hover:bg-gray-50">
+              <td class="px-6 py-4"></td>
+              <td class="px-6 py-4 flex justify-center items-center gap-3">
+                <div class="bg-amber-200 rounded-lg w-10 h-10">
+                  <img src="" alt="" />
+                </div>
+                <span class="text-white"> {name} </span>
+              </td>
+              <td class="px-6 py-4"></td>
+              <td class="px-6 py-4"></td>
+              <td class="px-6 py-4"></td>
+              <td class="px-6 py-4"></td>
+              <td class="px-6 py-4"></td>
+              <td class="px-6 py-4"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
 </html>
