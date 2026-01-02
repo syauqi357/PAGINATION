@@ -9,21 +9,21 @@
   <body class="flex justify-center items-center">
     <div class="bg-slate-50 container">
       <!-- head -->
-      <div class=" py-4 flex px-3 justify-between gap-1.5">
-        <div>
-          <div class="text-4xl">students</div>
+      <div class="flex flex-col md:flex-row py-4 justify-start md:justify-between gap-3 md:gap-1.5">
+        <div class="flex flex-col md:justify-center justify-start ml-4 md:items-center">
+          <div class="md:text-4xl text-5xl">students</div>
           <div class="flex gap-2">
             <span>{icon}</span> total: <span>{total}</span>
           </div>
         </div>
 
-        <div class=" flex justify-center items-center gap-3">
+        <div class=" flex md:justify-center justify-start ml-4 md:items-center gap-3">
           <button class="bg-blue-700 border text-blue-50 font-semibold rounded-lg transition-all ease-in-out hover:-translate-y-0.5 border-blue-900 px-4 py-2 hover:bg-blue-900">add student</button>
-          <button class="bg-blue-200 border font-semibold rounded-lg transition-all ease-in-out border-blue-900 hover:-translate-y-0.5 px-4 py-2 hover:bg-blue-400">export data</button>
+          <button class="bg-blue-200 border hover:text-blue-100 font-semibold rounded-lg transition-all ease-in-out hover:border-blue-600 border-blue-400 hover:-translate-y-0.5 px-4 py-2 hover:bg-blue-400">export data</button>
         </div>
       </div>
       <!-- action trigger -->
-      <div class="bg-amber-500 flex mx-4 gap-15">
+      <div class="bg-amber-500 flex flex-col md:flex-row justify-start gap-3 md:gap-15">
         <!-- sellective action -->
         <div class="flex justify-center items-center gap-2">
           <select name="" id="" placeholder="classes">
@@ -70,53 +70,64 @@
             class="text-xs text-gray-700 uppercase bg-slate-100 border-b border-b-slate-300"
           >
             <tr>
-              <th scope="col" class="px-6 py-3 bg-gray-100">
-              <button class="flex justify-center items-center gap-2 hover:bg-gray-400">
+              <th scope="col" class="px-6 py-3 " onclick="sort()">
                 NISN <span>{icon}</span>
-              </button>
               </th>
-              <th scope="col" class="px-6 py-3 bg-gray-200">
-                <button class="flex justify-center items-center gap-2">
-                  students
-                </button>
-
+              <th scope="col" class="uppercase px-6 py-3 " onclick="sort()">
+                students <span>{icon}</span>
               </th>
-              <th scope="col" class="px-6 py-3 bg-gray-300">
-                <div class="flex justify-center items-center gap-2">
-                  jenis kelamin
-                  <button class="bg-gray-600 px-2 py-2">sort</button>
+              <th scope="col" class="px-6 py-3 hidden sm:table-cell" onclick="sort()">
+                <div class="hidden sm:block">
+                  jenis kelamin <span>{icon}</span>
                 </div>
               </th>
-              <th scope="col" class="px-6 py-3 bg-gray-400">age</th>
-              <th scope="col" class="px-6 py-3 bg-gray-500">class</th>
-              <th scope="col" class="px-6 py-3 bg-gray-600">nilai rata2</th>
-              <th scope="col" class="px-6 py-3 bg-gray-700">S/I/A</th>
-              <th scope="col" class="px-6 py-3 bg-gray-800">actions</th>
+              <th scope="col" class="px-6 py-3 hidden sm:table-cell" onclick="sort()">
+                <div class="hidden sm:block">
+                age <span>{icon}</span>
+                </div>
+              </th>
+              <th scope="col" class="px-6 py-3 " onclick="sort()">
+                class <span>{icon}</span>
+              </th>
+              <th scope="col" class="px-6 py-3 hidden sm:table-cell">
+                nilai rata2 <span>{icon}</span>
+              </th>
+              <th scope="col" class="px-6 py-3 hidden sm:table-cell">
+                S/I/A <span>{icon}</span>
+              </th>
+              <th scope="col" class="px-6 py-3 ">
+                actions <span>{icon}</span>
+              </th>
             </tr>
           </thead>
           <tbody>
 
-            <tr class="border-b border-collapse border-b-slate-400">
+            <tr class="border-b border-collapse hover:bg-cyan-100 border-b-slate-400">
               <td class="px-6 py-4 "> <span class="bg-gray-300 px-2 py-1.5 rounded-md">32971321</span></td>
               <td class="px-6 py-4 flex justify-center items-center gap-3">
                 <div class="bg-amber-200 rounded-lg w-10 h-10">
                   <img src="" alt="" />
                 </div>
-                <span class="text-white"> {name} </span>
+                <span class="text-gray-900 font-semibold"> {name} </span>
               </td>
-              <td class="px-6 py-4"></td>
-              <td class="px-6 py-4"></td>
-              <td class="px-6 py-4"></td>
-              <td class="px-6 py-4"></td>
-              <td class="px-6 py-4"></td>
-              <td class="px-6 py-4 gap-3">
-                <div class="flex justify-evenly items-center gap-2">
-                  <button class="bg-amber-400 px-4 py-2">
-                    edit
+              <td class="px-6 py-4 hidden sm:table-cell">{jenis kelamin}</td>
+              <td class="px-6 py-4 hidden sm:table-cell">{umur}</td>
+              <td class="px-6 py-4">{kelas}</td>
+              <td class="px-6 py-4 hidden sm:table-cell">{avg score}</td>
+              <td class="px-6 py-4 hidden sm:table-cell">{2/3/0}</td>
+              <td class="px-3 py-2 gap-3">
+                <div class="flex justify-center items-center">
+                  <button class="flex justify-center items-center rounded-lg border border-blue-800 bg-blue-700 hover:bg-blue-600 transition-all  ease-in-out hover:border-blue-900 text-white px-4 py-3">
+                    <span class="hidden md:flex">
+                      {selengkapnya}
+                    </span>
+                    <span class="flex justify-center items-center transform-x-1">
+                    {icon}
+                    </span>
                   </button>
-                  <button class="bg-amber-400 px-4 py-2">
-                    delete
-                  </button>
+<!--                  <button class=" rounded-lg border border-amber-600 bg-amber-400 hover:bg-amber-500 hover:border-amber-700 px-4 py-2">-->
+<!--                    {delete}-->
+<!--                  </button>-->
                 </div>
               </td>
             </tr>
